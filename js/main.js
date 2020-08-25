@@ -9,6 +9,36 @@ $(document).ready(function(){
   const playMovieButton = $(".film-cover .film-data .film-data-buttons .divPlay .btn-play")
   const unmuteButton = $(".film-cover .film-data .film-data-buttons .divMute .btn-mute")
   let direction = -1;
+  let myNav = $('#nav')
+  let param = window.matchMedia("(max-width: 1500px)")
+
+  window.onscroll = function () { 
+    "use strict";
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
+       myNav.addClass("header-color")
+       myNav.removeClass("header-transparent")
+    } else {
+        myNav.removeClass("header-color")
+        myNav.addClass("header-transparent")
+      }
+  };
+
+
+  function menuDropdown(param) {
+    if (param.matches) {
+      $("#ulPill").css("display", "none")
+      $("#ulDrop").removeClass("invisible")
+      $("#ulDrop").addClass("visible")
+    } else {
+        $("#ulPill").css("display", "flex")
+        $("#ulDrop").removeClass("visible")
+        $("#ulDrop").addClass("invisible")
+      }
+  }
+
+  menuDropdown(param) // Call listener function at run time
+  param.addListener(menuDropdown) // Attach listener function on state changes
+
 
   forward.click(function() {
       if (direction === 1) {
@@ -43,20 +73,22 @@ $(document).ready(function(){
 
   filmList.mouseover(function() {
       if ($(this).children(filmCover).last().is(':hover') === true) {
-          $(this).closest(carousel).find('.forward').css('width', '6.8vw')
+          $(this).closest(carousel).find('.forward').css('display', 'none')
       } 
       if ($(this).children(filmCover).first().is(':hover') === true) {
-         $(this).closest(carousel).find('.backward').css('width', '6.8vw')
+         $(this).closest(carousel).find('.backward').css('display', 'none')
       }
   })
   
   filmList.mouseout(function() {
       
       if ($(this).children(filmCover).last().is(':hover') === false) {
-          $(this).closest(carousel).find('.forward').css('width', '12vw')
+        $(this).closest(carousel).find('.forward').css('display', 'block')
+        $(this).closest(carousel).find('.forward').css('width', '6vw')
       }
       if ($(this).children(filmCover).first().is(':hover') === false) {
-          $(this).closest(carousel).find('.backward').css('width', '12vw')
+        $(this).closest(carousel).find('.backward').css('display', 'block')
+        $(this).closest(carousel).find('.backward').css('width', '6vw')
       }
   })
 
