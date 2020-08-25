@@ -1,0 +1,608 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.body-wrapper {
+  overflow-x: hidden;
+}
+ 
+ .row {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .row > div {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+.btn { 
+  background-color: #0275d8;
+  border: none;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  /* padding: 0;
+  margin: 0; */
+}
+
+.btn:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.btn:hover {
+  color: white;
+}
+
+/* .btn-assistir {
+  background-color: #0275d8;
+  border: 1px solid #0275d8;
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-search {
+  background-color: #0275d8;
+  border: 1px solid #0275d8;
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+  box-shadow: none;
+  outline: none;
+} */
+
+.btn-play {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+  /* border: 1px solid red; */
+  /* font-size: 250%; */
+  outline: none;
+  font-size: max(1.5vw, 20px);
+} 
+
+.btn-play:hover {
+  color: #0275d8;
+}
+
+.btn-mute {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+  /* border: 1px solid red; */
+  /* font-size: 250%; */
+  width: 100%;
+  height: auto;
+  font-size: max(1.5vw, 20px);
+}
+
+.btn-mute:hover {
+  color: #0275d8;
+}
+
+
+.opacity-3 {
+  opacity: 0.6!important;
+}
+
+.card {
+  border: none;
+}
+
+#nav {
+  z-index: 3;
+  position: absolute;
+}
+
+
+.img-gradient {
+  position:relative;
+  display:inline-block;
+  border: none;
+}
+
+
+.img-gradient:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: -moz-linear-gradient(top, rgba(0,0,0, 0) -80%, rgb(14,14,14) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(14,14,14)) , color-stop(-80%,rgba(14,14,14))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0, 0) -80%,rgba(14,14,14) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0, 0) -80%,rgba(14,14,14) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0, 0) -80%,rgba(14,14,14) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0, 0) -80%,rgba(14,14,14) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.img-gradient img{
+  display:block;
+}
+
+.img-gradient-overlay { /* FF3.6+ */ /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(rgba(0,0,0, 0) -80%, rgba(14,14,14) 100%);
+  background: -o-linear-gradient(rgba(0,0,0, 0) -80%, rgba(14,14,14) 100%);
+  background: linear-gradient(rgba(0,0,0, 0) -80%, rgba(14,14,14) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  border-radius: .3rem;
+}
+
+.coverImg {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(14, 14, 14);
+}
+
+footer {
+  background-color: rgb(14, 14, 14);
+}
+
+.cover-grad-top {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.01), rgb(14, 14, 14));
+}
+
+.header-color {
+  background: rgb(14, 14, 14);
+  transition-duration: .4s;
+}
+
+.header-transparent {
+  background: transparent;
+  transition-duration: .8s;
+}
+
+footer div > p {
+  font-size: 1vw;
+  font-weight: lighter;
+}
+
+.nav-link {
+  color: lightgrey;
+}
+
+.nav-link:hover {
+  color: darkgrey;
+}
+
+[aria-labelledby] {
+  background-color: rgb(14, 14, 14, .9);
+  text-align: center;
+}
+
+[aria-labelledby] a:hover {
+  background-color: rgba(2, 117, 216, 0.9);
+  color: white;
+}
+
+#filmesAcao {
+  z-index: 0;
+  padding-bottom: 100px;
+}
+
+/* #filmesAcao ul li {
+  margin-top: 500px;
+} */
+
+#filmesAcao li {
+  margin: 12px 12px 20px 0px;
+  transition: ease .3s;
+  list-style: none;
+  /* overflow: hidden; */
+  max-height: 600px;
+}
+
+#filmesAcao li:hover {
+  margin: 0;
+  transform: scale(1.2);
+  z-index: 3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 10px 18px rgba(2, 117, 216, 0.2);  
+}
+
+#filmesComedia {
+  z-index: 0;
+}
+
+#filmesComedia li {
+  margin: 12px 12px 20px 0px;
+  transition: ease .3s;
+  list-style: none;
+  /* overflow: hidden; */
+  max-height: 600px;
+
+}
+
+#filmesComedia li:hover {
+  margin: 0;
+  transform: scale(1.2);
+  z-index: 3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 10px 18px #141414;  
+}
+
+#filmesDrama {
+  z-index: 0;
+}
+
+#filmesDrama li {
+  margin: 12px 12px 20px 0px;
+  transition: ease .3s;
+  list-style: none;
+  /* overflow: hidden; */
+  max-height: 600px;
+
+}
+
+#filmesDrama li:hover {
+  margin: 0;
+  transform: scale(1.2);
+  z-index: 3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 10px 18px #141414;  
+}
+
+.film-data {
+  display: none;
+  position:fixed;
+  width:100%; 
+  height:50%;
+  bottom: -5%;
+  margin: 0;
+  padding: 0;
+}
+
+.film-data-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid rgb(71, 114, 255); */
+  margin-top: 10px;
+}
+
+.film-time {
+  /* border: 1px solid pink; */
+  font-weight: bold;
+  color: rgb(64, 226, 131);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+
+li:hover .film-data {
+  z-index: 2;
+  display: block;
+}
+
+.film-data-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 10px;
+  /* border: 1px solid yellow; */
+  width: 100%;
+  height: auto;
+}
+
+.film-data-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid cyan; */
+}
+
+.imdb-score {
+  font-size: max(1vw, 10px);
+  margin: 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imdb-logo {
+  font-weight: 900;
+  background-color: gold;
+  color: black;
+  /* border: 1px solid gold; */
+  border-radius: 4px;
+  padding: 0 3px;
+  margin: 0 4px;
+}
+
+.rotten-score {
+  font-size: max(1vw, 10px);
+  margin: 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotten-logo {
+  font-weight: 900;
+  background-color: tomato;
+  color: white;
+  /* border: 1px solid tomato; */
+  border-radius: 4px;
+  padding: 0 3px;
+  margin: 0 4px;
+}
+
+.film-age {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+.film-year {
+  font-weight: 500;
+}
+
+.trailer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 100%; 
+  max-height: 100%;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+}
+
+.film-trailer {
+  position: relative;
+  display: none;
+  width:100%; 
+  height:50%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+li:hover .film-trailer {
+  display: block;
+  z-index: 2;
+}
+
+.img-fill {
+  height: auto;
+  width: auto;
+  max-height: 110%;
+  max-width: 110%;
+  align-content: center; 
+}
+
+
+.blancSpace {
+  /* border: 1px solid blue; */
+  width: 20%;
+  height: auto;
+}
+
+.container-footer {
+  padding-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-footer p {
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 300px) {
+  div > h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 12px;
+  } */
+  /* div > .btn {
+    font-size: 12px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 50px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 40px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -2em;
+  }
+
+}
+
+@media (min-width: 550px) {
+  div > h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 16px;
+  } */
+  /* div > .btn {
+    font-size: 16px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 80px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 50px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -3em;
+  }
+
+}
+
+@media (min-width: 768px) {
+  div > h1 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 20px;
+  } */
+  /* div > .btn {
+    font-size: 20px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 120px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 60px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -5em;
+  }
+
+}
+
+@media (max-width: 880px) {
+ 
+  #info-cover {
+    display: none;
+
+}
+
+@media (min-width: 992px) {
+  div > h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 24px;
+  } */
+  /* div > .btn {
+    font-size: 24px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 180px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 70px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -8em;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  div > h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 32px;
+  } */
+  /* div > .btn {
+    font-size: 32px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 200px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 80px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -9em;
+  }
+ 
+}
+
+@media (min-width: 1800px) {
+  div > h1 {
+    font-size: 44px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 36px;
+  } */
+  /* div > .btn {
+    font-size: 36px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 400px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 90px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -20em;
+  }
+}
+
+@media (min-width: 2200px) {
+  div > h1 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  /* div > p {
+    font-size: 40px;
+  } */
+  /* div > .btn {
+    font-size: 40px;
+  } */
+  #info-cover {
+    bottom: 0;
+    margin-bottom: 600px;
+  }
+  .cover-grad-top, .header-color, .header-transparent {
+    height: 90px;
+  }
+  #info-cover .btn {
+    padding: 0.5em 1.5em;
+  }
+  #todosFilmes {
+    margin-top: -32em;
+  }
+
+}
