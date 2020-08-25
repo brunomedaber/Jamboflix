@@ -41,8 +41,6 @@ volumeWrapper.css('visibility', "hidden")
 captionsWrapper.css('opacity', '0')
 captionsWrapper.css('visibility', "hidden")
 
-
-
 const displayControls = () => {
   containerControls.style.opacity = '1';
   containerBack.style.opacity = '1';
@@ -100,14 +98,6 @@ const toggleFullScreen = () => {
   }
 }
 
-// const toggleCaptions = () => {
-//   if ($('track').attr('src')) {
-//     $('track').attr('src', '');
-//   } else {
-//     $('track').attr('src', `./video/${filmName}/${filmName}.vtt`);
-//   }
-// }
-
 const hideVolControl = () => {
   volumeWrapper.css('opacity', '0');
   volumeWrapper.css('visibility', "hidden")
@@ -135,22 +125,6 @@ const hideCaptionsSelector = () => {
   containerProgress.css('visibility', "visible") 
   containerProgress.css('opacity', '1');
 }
-
-// const div = document.createElement('div');
-// div.addEventListener('click', function ()  {
-//     // Now we can edit the document without any problems:
-//     // application.editDocument(...)
-//     toggleMute();
-//     div.remove();
-// });
-// document.body.appendChild(div);
-
-// // Wait for our <div> to be actually added to the DOM, otherwise
-// // the click event will not be fired.
-// setTimeout(() => {
-//     div.click();
-// }, 1000);
-
 
 document.onkeyup = function (event) {
     if (event.code == "Space") {
@@ -215,10 +189,6 @@ forwardButton.addEventListener('click', () => {
 video.addEventListener('timeupdate', () => {
   watchedBar.style.width = ((video.currentTime / video.duration) * 100) + '%';
   const totalSecondsRemaining = video.duration - video.currentTime;
-  // const minutesRemaining = Math.floor(totalSecondsRemaining / 60);
-  // const secondsRemanining = Math.floor(totalSecondsRemaining - minutesRemaining * 60);
-  // timeRemaining.textContent = `${minutesRemaining.toString().padStart(2, '0')}:${secondsRemanining.toString().padStart(2, '0')}`;
-  const time = new Date(null);
   time.setSeconds(totalSecondsRemaining);
   let hours = null;
 
@@ -232,7 +202,6 @@ video.addEventListener('timeupdate', () => {
     timeRemaining.textContent = `${hours ? hours : '00'}:${minutes}:${seconds}`;
 });
 
-
 progressBar.addEventListener('click', (event) => {
   const pos = (event.pageX  - (progressBar.offsetLeft + progressBar.offsetParent.offsetLeft)) / progressBar.offsetWidth;
   video.currentTime = pos * video.duration;
@@ -243,7 +212,6 @@ window.SetVolume = function(val)
     var player = document.getElementById('video');
     player.volume = val / 100;
 }
-
 
 $(".container-back button.return").click(function(){
   window.open("index.html", "_self", "", false)
